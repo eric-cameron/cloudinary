@@ -4,7 +4,8 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
-import store from '../store/index'
+import CloudView from '../views/CloudView.vue'
+import store from '../store/index.js'
 
 Vue.use(Router)
 
@@ -33,6 +34,14 @@ const router = new Router({
       path: "/login",
       name: "login",
       component: Login,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/cloud",
+      name: "cloud",
+      component: CloudView,
       meta: {
         requiresAuth: false
       }
